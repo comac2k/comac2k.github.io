@@ -14,6 +14,8 @@ You may want to skip directly to the [detailed conclusions](#detailed-conclusion
 
 ### Test Circuit
 
+![](test_circuit.svg)
+
 I put together a very simple no-load test circuit consisting of a high impedance voltage divider with a capacitor in parallel to act as a lowpass. The lowpass is needed because I wanted to observe the audible waveform
 (which should resemble the PCM data I send to the chip) instead of the high-frequency (330kHz) PWM waves the chip uses to drive the speaker.
 
