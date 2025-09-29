@@ -17,7 +17,7 @@ You may want to skip directly to the [detailed conclusions](#detailed-conclusion
 I put together a very simple no-load test circuit consisting of a high impedance voltage divider with a capacitor in parallel to act as a lowpass. The lowpass is needed because I wanted to observe the audible waveform
 (which should resemble the PCM data I send to the chip) instead of the high-frequency (330kHz) PWM waves the chip uses to drive the speaker.
 
-Hooked it up to an osciloscope and tested all the available gain settings while playing a 100Hz full amplitude sine signal:
+Hooked it up to an oscilloscope and tested all the available gain settings while playing a 100Hz full amplitude sine signal:
 
 | 3dB | 6dB | 9dB | 12dB | 15dB |
 | --- | --- | --- | ---- | ---- |
@@ -27,9 +27,9 @@ Is it just me or the 12db and 15db ones look a tiny wee bit saturated? X'D
 
 ### Numerical analysis
 
-Seeing the measurements in the osciloscope was of course not enough for me. I needed hard numerical evidence.
+Seeing the measurements in the oscilloscope was of course not enough for me. I needed hard numerical evidence.
 
-So I exported the capture data from the osciloscope and setup a gnuplot script to fit an ideal clipped sin function to each of the measurements.
+So I exported the capture data from the oscilloscope and setup a gnuplot script to fit an ideal clipped sin function to each of the measurements.
 
 Fitted function definition:
 ```Gnuplot
@@ -46,10 +46,10 @@ Results:
 | --- | --- | --- | ---- | ---- |
 | ![](gplot_3db.svg) | ![](gplot_6db.svg) | ![](gplot_9db.svg) | ![](gplot_12db.svg) | ![](gplot_15db.svg) |
 | Freq: 99.43 | Freq: 99.47 | Freq: 99.48 | Freq: 99.44 | Freq: 99.44 | 
-Phase: 0.57 | Phase: 0.57 | Phase: 0.53 | Phase: 0.57 | Phase: 0.53 | 
-Clip: -0.01dB | Clip: -0.01dB | Clip: -0.08dB | Clip: -3.08dB | Clip: -6.05dB | 
-Gain: -6.05dB | Gain: -3.01dB | Gain: 0.00dB | Gain: 2.98dB | Gain: 5.96dB | 
-DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 |
+| Phase: 0.57 | Phase: 0.57 | Phase: 0.53 | Phase: 0.57 | Phase: 0.53 | 
+| Clip: -0.01dB | Clip: -0.01dB | Clip: -0.08dB | Clip: -3.08dB | Clip: -6.05dB | 
+| Gain: -6.05dB | Gain: -3.01dB | Gain: 0.00dB | Gain: 2.98dB | Gain: 5.96dB | 
+| DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 |
 
 ## Conclusions
 
