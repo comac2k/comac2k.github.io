@@ -32,7 +32,7 @@ Seeing the measurements in the oscilloscope was of course not enough for me. I n
 So I exported the capture data from the oscilloscope and setup a gnuplot script to fit an ideal clipped sin function to each of the measurements.
 
 Fitted function definition:
-```Gnuplot
+```gnuplot
 PI=3.14159
 min(a,b)=a>b ? b : a
 max(a,b)=a>b ? a : b
@@ -42,13 +42,14 @@ f(x,frequency,phase,clip,gain,dc_offset)=min(clip, max(-clip, sin(x*2*PI*frequen
 ```
 
 Results:
+
 | 3dB | 6dB | 9dB | 12dB | 15dB |
 | --- | --- | --- | ---- | ---- |
 | ![](gplot_3db.svg) | ![](gplot_6db.svg) | ![](gplot_9db.svg) | ![](gplot_12db.svg) | ![](gplot_15db.svg) |
-| Freq: 99.43 | Freq: 99.47 | Freq: 99.48 | Freq: 99.44 | Freq: 99.44 | 
-| Phase: 0.57 | Phase: 0.57 | Phase: 0.53 | Phase: 0.57 | Phase: 0.53 | 
-| Clip: -0.01dB | Clip: -0.01dB | Clip: -0.08dB | Clip: -3.08dB | Clip: -6.05dB | 
-| Gain: -6.05dB | Gain: -3.01dB | Gain: 0.00dB | Gain: 2.98dB | Gain: 5.96dB | 
+| Freq: 99.43 | Freq: 99.47 | Freq: 99.48 | Freq: 99.44 | Freq: 99.44 |
+| Phase: 0.57 | Phase: 0.57 | Phase: 0.53 | Phase: 0.57 | Phase: 0.53 |
+| Clip: -0.01dB | Clip: -0.01dB | Clip: -0.08dB | Clip: -3.08dB | Clip: -6.05dB |
+| Gain: -6.05dB | Gain: -3.01dB | Gain: 0.00dB | Gain: 2.98dB | Gain: 5.96dB |
 | DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 | DC offset: 0.02 |
 
 ## Conclusions
